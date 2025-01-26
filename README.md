@@ -1,2 +1,2 @@
-# Gerador-de-Senhas-Aleat-rias
+# Gerador de Senhas Aleatórias
 Gera senhas seguras com critérios personalizados.
