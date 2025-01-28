@@ -29,3 +29,4 @@ O gerador deverá atender aos seguintes critérios:
 - [Desmistificando o significado dos Underscores (_) em Python](https://medium.com/@leandrodestefani/desmistificando-o-significado-dos-underscores-em-python-6b0a78ec9f4c)
 - [Documentação do PEP8 sobre estilos de nomenclatura](https://pep8.org/#descriptive-naming-styles)
 - [What's the meaning of underscores (_ & __) in Python variable names? (Dan Bader)](https://www.youtube.com/watch?v=ALZmCy2u0jQ)
+- [Documentação do Flask | Quick Start](https://flask.palletsprojects.com/en/stable/quickstart/)
