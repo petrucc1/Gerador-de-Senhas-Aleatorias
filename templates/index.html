@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gerador de Senhas Aleatórias</title>
+</head>
+<body class="bg-gray-900 flex items-center justify-center h-screen">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-md">
+        <h1 class="text-2xl font-bold text-white mb-6">Gerador de Senhas Aleatórias</h1>
+
+        <!-- Formulário para gerar senha -->
+        <form method="POST" class="space-y-4">
+            <div class="flex justify-start flex-row gap-x-4 items-center">
+                <label for="length" class="text-gray-300 text-start">Tamanho da senha (mín. 12):</label>
+                <input type="range" id="length" name="length" min="12" max="30" value="12" class="w-full bg-gray-700 text-white" oninput="this.nextElementSibling.value = this.value">
+                <output for="length" class="text-gray-300">12</output>
+            </div>
+            <div>
+                <label class="text-gray-300">Deseja incluir maior complexidade?</label>
+                <div class="flex flex-row gap-x-4 justify-center items-center mt-2">
+                    <div class="flex justify-start items-center">
+                        <input type="checkbox" id="digits" name="digits" class="mr-2 text-gray-300">
+                        <label for="digits" class="text-gray-300">Números</label>
+                    </div>
+                    <div class="flex justify-start items-center">
+                        <input type="checkbox" id="special" name="special" class="mr-2 text-gray-300">
+                        <label for="special" class="text-gray-300">Símbolos</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="w-full py-2 bg-gray-700 text-white rounded hover:bg-gray-600">Gerar Nova Senha</button>
+        </form>
+
+        <!-- Exibindo a senha gerada -->
+        {% if password %}
+            <div class="mt-6 p-4 bg-gray-700 text-white rounded">
+                <p class="text-xl">{{ password }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
