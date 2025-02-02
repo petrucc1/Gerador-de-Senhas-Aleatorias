@@ -23,6 +23,10 @@ def generator_password(length, use_digits, use_special):
 @app.route('/', methods=['GET', 'POST'])
 def home():
     password = ''
+    length = 12  # Valor padrão de tamanho da senha
+    use_digits = False
+    use_special = False
+    
     if request.method == 'POST':
         # Recebendo dados do formulário
         length = int(request.form['length'])
@@ -32,7 +36,7 @@ def home():
         # Gerando a senha
         password = generator_password(length, use_digits, use_special)
 
-    return render_template('index.html', password=password)
+    return render_template('index.html', password=password, length=length, use_digits=use_digits, use_special=use_special)
 
 # Rodando o servidor Flask
 if __name__ == '__main__':

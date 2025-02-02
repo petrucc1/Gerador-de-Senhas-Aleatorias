@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/0668e13d29.js" crossorigin="anonymous"></script>
     <title>Gerador de Senhas Aleatórias</title>
 </head>
 <body class="bg-gray-900 flex items-center justify-center h-screen">
@@ -14,18 +15,18 @@
         <form method="POST" class="space-y-4">
             <div class="flex justify-start flex-row gap-x-4 items-center">
                 <label for="length" class="text-gray-300 text-start">Tamanho da senha (mín. 12):</label>
-                <input type="range" id="length" name="length" min="12" max="30" value="12" class="w-full bg-gray-700 text-white" oninput="this.nextElementSibling.value = this.value">
-                <output for="length" class="text-gray-300">12</output>
+                <input type="range" id="length" name="length" min="12" max="30" value="{{ length }}" class="w-full bg-gray-700 text-white" oninput="this.nextElementSibling.value = this.value">
+                <output for="length" class="text-gray-300">{{ length }}</output>
             </div>
             <div>
                 <label class="text-gray-300">Deseja incluir maior complexidade?</label>
                 <div class="flex flex-row gap-x-4 justify-center items-center mt-2">
                     <div class="flex justify-start items-center">
-                        <input type="checkbox" id="digits" name="digits" class="mr-2 text-gray-300">
+                        <input type="checkbox" id="digits" name="digits" class="mr-2 text-gray-300" {% if use_digits %} checked {% endif %}>
                         <label for="digits" class="text-gray-300">Números</label>
                     </div>
                     <div class="flex justify-start items-center">
-                        <input type="checkbox" id="special" name="special" class="mr-2 text-gray-300">
+                        <input type="checkbox" id="special" name="special" class="mr-2 text-gray-300" {% if use_special %} checked {% endif %}>
                         <label for="special" class="text-gray-300">Símbolos</label>
                     </div>
                 </div>
@@ -35,10 +36,21 @@
 
         <!-- Exibindo a senha gerada -->
         {% if password %}
-            <div class="mt-6 p-4 bg-gray-700 text-white rounded">
+            <div class="mt-6 p-4 bg-gray-700 text-white rounded flex justify-between items-center">
                 <p class="text-xl">{{ password }}</p>
+                <i class="fa-solid fa-copy cursor-pointer" title="Copiar" onclick="copyPassword()"></i>
             </div>
         {% endif %}
     </div>
+
+    {% comment %} Script que copia a senha para a área de transferência {% endcomment %}
+    <script>
+        function copyPassword() {
+            const password = document.querySelector('.fa-copy').previousElementSibling.innerText;
+            navigator.clipboard.writeText(password);
+            alert('Senha copiada para a área de transferência!');
+        }
+    </script>
+
 </body>
 </html>
