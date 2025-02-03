@@ -8,19 +8,21 @@ Criar um gerador de senhas seguras seguindo boas práticas de segurança da info
 
 O gerador deverá atender aos seguintes critérios:  
 - Mínimo de 12 caracteres (letras maiúsculas, minúsculas, números e caracteres especiais).  
-- Evitar palavras comuns ou padrões previsíveis.  
-- Possibilidade de gerar frases fáceis de lembrar.  
+- Geração de frases fáceis de lembrar.  
+- Senhas compostas por palavras em português e, quando solicitado, inclusão de números e caracteres especiais.
+- Evita o uso de palavras comuns ou padrões previsíveis.
 
 ## Funcionalidades
-- Escolha do tamanho da senha personalizada.  
-- Inclusão ou exclusão de tipos de caracteres (números, símbolos, letras).  
-- Opção para gerar frases fáceis de lembrar.  
+- Escolha do tamanho personalizado da senha (de 12 a 30 caracteres). 
+- Inclusão ou exclusão de números e símbolos na senha.  
+- Senhas formadas por palavras em português retiradas de um arquivo JSON, que são misturadas com números e caracteres especiais, se solicitado.  
 
 ## Tecnologias Utilizadas  
 - Python 3.13.1  
-- Biblioteca random (para geração aleatória)  
-- Biblioteca secrets (para segurança)
-- Biblioteca string (para tabela ASCII)
+- Flask (framework web para criação do aplicativo)  
+- random (para geração de palavras e números aleatórios)
+- json (para leitura de um arquivo de palavras em português)
+- Jinja2 (para renderização de templates no Flask)
 
 ## Material Acessado
 - [Documentação do Python sobre a biblioteca random](https://docs.python.org/pt-br/3.13/library/random.html#)
@@ -32,3 +34,4 @@ O gerador deverá atender aos seguintes critérios:
 - [Documentação do PEP8 sobre estilos de nomenclatura](https://pep8.org/#descriptive-naming-styles)
 - [What's the meaning of underscores (_ & __) in Python variable names? (Dan Bader)](https://www.youtube.com/watch?v=ALZmCy2u0jQ)
 - [Documentação do Flask | Quick Start](https://flask.palletsprojects.com/en/stable/quickstart/)
+- [Documentação do Python sobre a biblioteca json](https://docs.python.org/pt-br/3.13/library/json.html)

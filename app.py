@@ -10,6 +10,10 @@ def get_portuguese_words(count=4):
         words = json.load(file)
     return random.sample(words, count)
 
+# Função para alterar aleatoriamente para maiúsculas e minúsculas
+def random_case(word):
+    return ''.join([random.choice([letter.lower(), letter.upper()]) for letter in word])
+
 # Gera senha com palavras em português e caracteres especiais/dígitos, se necessário
 def generate_password(target_length=12, include_digits=False, include_special=False):
     password = ""
@@ -19,6 +23,7 @@ def generate_password(target_length=12, include_digits=False, include_special=Fa
         word_count = 1  # Inicia com uma palavra por vez
         words = get_portuguese_words(word_count)
         for word in words:
+            word = random_case(word)
             password += word
         
         # Adiciona números ou caracteres especiais se necessário
