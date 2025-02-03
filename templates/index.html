@@ -11,10 +11,10 @@
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-md">
         <h1 class="text-2xl font-bold text-white mb-6">Gerador de Senhas Aleatórias</h1>
 
-        <!-- Formulário para gerar senha -->
+        {# Formulário para gerar senha #}
         <form method="POST" class="space-y-4">
             <div class="flex justify-start flex-row gap-x-4 items-center">
-                <label for="length" class="text-gray-300 text-start">Tamanho da senha (mín. 12):</label>
+                <label for="length" class="text-gray-300 text-start">Tamanho da senha:</label>
                 <input type="range" id="length" name="length" min="12" max="30" value="{{ length }}" class="w-full bg-gray-700 text-white" oninput="this.nextElementSibling.value = this.value">
                 <output for="length" class="text-gray-300">{{ length }}</output>
             </div>
@@ -34,7 +34,7 @@
             <button type="submit" class="w-full py-2 bg-gray-700 text-white rounded hover:bg-gray-600">Gerar Nova Senha</button>
         </form>
 
-        <!-- Exibindo a senha gerada -->
+        {# Exibindo a senha gerada #}
         {% if password %}
             <div class="mt-6 p-4 bg-gray-700 text-white rounded flex justify-between items-center">
                 <p class="text-xl">{{ password }}</p>
@@ -43,7 +43,7 @@
         {% endif %}
     </div>
 
-    {% comment %} Script que copia a senha para a área de transferência {% endcomment %}
+    {# Script que copia a senha para a área de transferência #}
     <script>
         function copyPassword() {
             const password = document.querySelector('.fa-copy').previousElementSibling.innerText;
