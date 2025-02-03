@@ -17,6 +17,12 @@ O gerador deverá atender aos seguintes critérios:
 - Inclusão ou exclusão de números e símbolos na senha.  
 - Senhas formadas por palavras em português retiradas de um arquivo JSON, que são misturadas com números e caracteres especiais, se solicitado.  
 
+## Melhorias Futuras
+- Escolha do idioma da página
+- Modo claro ou escuro
+- Palavras memoráveis (padrão se tornará letras minúsculas e/ou maiúsculas aleatórias)
+- Links sociais
+
 ## Tecnologias Utilizadas  
 - Python 3.13.1  
 - Flask (framework web para criação do aplicativo)  
