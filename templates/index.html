@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/0668e13d29.js" crossorigin="anonymous"></script>
-    <title>Gerador de Senhas Aleatórias</title>
+    <title>Gerador de Senhas Aleatórias e Seguras</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon-32px.png') }}" type="image/png">
 </head>
 <body class="bg-gray-900 flex items-center justify-center h-screen p-4">
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-md">
-        <h1 class="text-2xl font-bold text-white mb-6">Gerador de Senhas Aleatórias</h1>
+        <h1 class="text-2xl font-bold text-white mb-6">Gerador de Senhas Aleatórias e Senhas</h1>
 
         {# Formulário para gerar senha #}
         <form method="POST" class="space-y-4">
